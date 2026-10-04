@@ -73,6 +73,8 @@ test("keyboard opens a named modal, contains focus and restores it on Escape", a
   await page.keyboard.press("Tab");
   assert.equal(await page.locator("#viewer-caption a").evaluate(element => document.activeElement === element), true);
   await page.keyboard.press("Tab");
+  assert.equal(await page.locator("#copy-artwork-link").evaluate(element => document.activeElement === element), true);
+  await page.keyboard.press("Tab");
   // Chromium can temporarily focus the browser chrome on wrapping. A subsequent
   // Tab must return inside the modal, never to a background page control.
   await page.keyboard.press("Tab");
