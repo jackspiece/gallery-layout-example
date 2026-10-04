@@ -13,10 +13,19 @@ A small, responsive art gallery built with HTML, CSS and JavaScript. Four public
 
 - An opening artwork leads into a staggered collection of four paintings.
 - Open an artwork for a larger view; Escape closes it.
+- Bookmark an artwork or use **Copy artwork link** to share that exact view. Back and Forward follow the viewer.
 - The layout adapts to a narrow screen, with keyboard and touch interaction.
 - Image links still work when JavaScript is disabled.
 
 This is an independent layout study. **Web design and code: jackspiece. Paintings: Claude Monet.**
+
+## Share an artwork
+
+Open a painting, then choose **Copy artwork link**. If the browser cannot copy it, a selected, read-only link appears so you can copy it manually. No clipboard permission setting needs to be changed. A link opens the same painting when JavaScript and the native dialog API are available; ordinary painting links still open the image without JavaScript.
+
+The stable fragments are `#artwork-cliff-walk`, `#artwork-water-lilies`, `#artwork-sunrise` and `#artwork-garden`. For example, after starting the local preview below, open `http://127.0.0.1:8000/#artwork-water-lilies`.
+
+Opening a painting adds one viewer history entry. Close, Escape, a backdrop click or Back returns to the previous page section; Forward reopens that artwork. Changing the artwork within an already-open viewer replaces its current entry. Closing a pasted or reloaded artwork link removes its fragment and stays on the gallery, bringing the focused artwork into view instead of navigating to another page. Unknown fragments are left alone.
 
 ## Preview locally
 
@@ -41,6 +50,10 @@ Open **http://127.0.0.1:8000/** in your browser.
 | [image-credits.json](image-credits.json) | Download records, dimensions and source fingerprints. |
 
 Images are hosted locally as WebP. The page uses system fonts and vanilla JavaScript.
+
+## Check the interactions
+
+Optional development checks cover deep links/history, clipboard fallback, keyboard/modal focus, close/reopen races, no-JavaScript image links, responsive layouts and local asset budgets. See [testing and performance notes](docs/testing.md) for commands, evidence and limits. The site itself still needs no build step or framework.
 
 ## Artwork and license
 

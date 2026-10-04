@@ -89,6 +89,12 @@ figcaption { display: flex; justify-content: space-between; gap: 16px; padding-t
 .dialog-caption { margin: 17px 0 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
 .dialog-caption a { text-underline-offset: 3px; }
 
+.dialog-share { margin-top: 16px; font-size: 12px; }
+#copy-status { margin: 10px 0; }
+#copy-status:empty { display: none; }
+#link-fallback:not([hidden]) { display: block; margin-top: 10px; }
+#artwork-link { display: block; width: 100%; min-width: 0; margin-top: 7px; padding: 10px; font: inherit; color: var(--ink); background: white; border: 1px solid var(--line); }
+
 @media (min-width: 1440px) {
   .hero { padding-block: 85px 98px; }
 }

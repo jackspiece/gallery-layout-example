@@ -29,7 +29,7 @@
         <p class="hero-footnote">Independent web design study<br>Public domain artwork</p>
       </div>
       <figure class="hero-work">
-      <a class="art-link" href="assets/cliff-walk.webp" data-artwork
+      <a class="art-link" href="assets/cliff-walk.webp" data-artwork="cliff-walk"
         data-title="Cliff Walk at Pourville" data-year="1882"
         data-museum="Art Institute of Chicago" data-source="https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Cliff_Walk_at_Pourville_-_Google_Art_Project.jpg"
         aria-label="Enlarge Cliff Walk at Pourville">
@@ -47,7 +47,7 @@
     <section id="collection" aria-labelledby="collection-title">
       <div class="section-head"><h2 id="collection-title">A few more moments</h2><p>Select a painting to enlarge</p></div>
       <div class="collection-grid"><figure class="work">
-      <a class="art-link" href="assets/water-lilies.webp" data-artwork
+      <a class="art-link" href="assets/water-lilies.webp" data-artwork="water-lilies"
         data-title="Water Lilies" data-year="1906"
         data-museum="Art Institute of Chicago" data-source="https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Water_Lilies_-_1906,_Ryerson.jpg"
         aria-label="Enlarge Water Lilies">
@@ -61,7 +61,7 @@
       <figcaption><div><h3 class="work-title">Water Lilies</h3>
         <span class="work-detail">Claude Monet, 1906</span></div><span class="work-index">02</span></figcaption>
     </figure><figure class="work">
-      <a class="art-link" href="assets/sunrise.webp" data-artwork
+      <a class="art-link" href="assets/sunrise.webp" data-artwork="sunrise"
         data-title="Impression, Sunrise" data-year="1872"
         data-museum="Image via Wikimedia Commons" data-source="https://commons.wikimedia.org/wiki/File:Claude_Monet,_Impression,_soleil_levant.jpg"
         aria-label="Enlarge Impression, Sunrise">
@@ -75,7 +75,7 @@
       <figcaption><div><h3 class="work-title">Impression, Sunrise</h3>
         <span class="work-detail">Claude Monet, 1872</span></div><span class="work-index">03</span></figcaption>
     </figure><figure class="work">
-      <a class="art-link" href="assets/garden.webp" data-artwork
+      <a class="art-link" href="assets/garden.webp" data-artwork="garden"
         data-title="Garden at Sainte-Adresse" data-year="1867"
         data-museum="The Metropolitan Museum of Art" data-source="https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Jardin_%C3%A0_Sainte-Adresse.jpg"
         aria-label="Enlarge Garden at Sainte-Adresse">
@@ -103,10 +103,17 @@
     </section>
   </main>
   <footer class="site-footer wrap"><p>Web design and code by jackspiece.</p><a href="https://github.com/jackspiece/gallery-layout-example">View the source ↗</a></footer>
-  <dialog id="art-viewer" class="art-dialog" aria-labelledby="viewer-title">
+  <dialog id="art-viewer" class="art-dialog" aria-labelledby="viewer-title" aria-describedby="viewer-caption">
     <div class="dialog-head"><h2 id="viewer-title">Artwork</h2><button id="close-viewer" class="dialog-close" type="button">Close <span aria-hidden="true">×</span></button></div>
     <img id="viewer-image" class="dialog-image" alt="">
     <p id="viewer-caption" class="dialog-caption"></p>
+    <div class="dialog-share">
+      <button id="copy-artwork-link" class="dialog-close" type="button">Copy artwork link</button>
+      <p id="copy-status" role="status"></p>
+      <label id="link-fallback" hidden>Artwork link
+        <input id="artwork-link" type="text" readonly spellcheck="false">
+      </label>
+    </div>
   </dialog>
 </body>
 </html>
